@@ -1,0 +1,31 @@
+#Configuações do Microservice
+spring:
+  application:
+    name: msc-booksws
+
+#Configuracoes Relacionadas a como localizar o ConfigServer usando Eureka
+  cloud:
+    config:
+      enabled: true
+      profile: ${spring.profiles.active:default}
+      discovery:
+        service-id: msc-configserver
+      name: booksws
+
+#Porta deste Microservice
+server:
+  port: 9002
+
+#Configuracoes relacionadas ao registro no eureka
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#Configuracoes relacionadas ao Actuator
+info:
+  app:
+    name:@project.name@
+    description:@project.description@
+    version:@project.version
