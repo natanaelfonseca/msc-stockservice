@@ -2,8 +2,15 @@ package br.com.treinamento.booksws.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Author {
 	
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String firstName;
 	private String lastName;

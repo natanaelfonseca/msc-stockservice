@@ -1,7 +1,14 @@
 package br.com.treinamento.booksws.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Book {
 	
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String title;
 	private String language;
@@ -36,7 +43,4 @@ public class Book {
 		this.language = language;
 	}
 
-	
-	
-	
 }
