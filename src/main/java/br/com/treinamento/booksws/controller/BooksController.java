@@ -38,8 +38,8 @@ public class BooksController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.OK)
-	public void create(@RequestBody Book bike) {
-		booksRepository.save( bike );
+	public void create(@RequestBody Book book) {
+		booksRepository.save( book );
 	}
 	
 	@GetMapping("/configs")
