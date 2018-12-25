@@ -10,7 +10,7 @@
 	<packaging>jar</packaging>
 
 	<name>Books Microservice</name>
-	<description>Project created for Testing Purposes</description>
+	<description>Book API, e um microservice relacionado a operacoes com a entidade livro</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -54,6 +54,12 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
+		</dependency>		
+		
+   		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
 		</dependency>
 
 		<dependency>
@@ -61,6 +67,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
 	</dependencies>
 
 	<dependencyManagement>
@@ -77,12 +84,13 @@
 
 	<build>
 		<plugins>
-		
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
+			<!-- Necessario para substituir alguns valores nos arquivos (Maven Filtering) -->
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
 				<executions>
@@ -105,6 +113,7 @@
 				</executions>
 			</plugin>
 
+			<!-- Plugin necessario para criar a imagem docker -->
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>

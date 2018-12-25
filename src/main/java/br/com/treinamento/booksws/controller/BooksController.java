@@ -42,6 +42,10 @@ public class BooksController {
 		booksRepository.save( book );
 	}
 	
+	/**
+	 * Criei esse path apenas para testar se as configuracoes estao sendo pegas do config server
+	 * @return
+	 */
 	@GetMapping("/configs")
     public String test() {
         StringBuilder builder = new StringBuilder();

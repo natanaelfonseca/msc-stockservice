@@ -1,0 +1,12 @@
+#Configuracoes Relacionadas a como localizar o ConfigServer usando Eureka
+#obs: Essas configuracoes tem que estar num arquivo chamado bootstrap.yml, senao nao funciona
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: msc-configserver
+      profile: ${spring.profiles.active:default}
+
+#Nome da aplicação para recuperar as propriedades do configserver
+      name: booksws
