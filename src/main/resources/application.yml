@@ -1,6 +1,6 @@
 #Porta deste Microservice
 server:
-  port: ${PORT:9010}
+  port: ${PORT:9020}
 
 #Configuracoes relacionadas ao registro no eureka
 eureka:

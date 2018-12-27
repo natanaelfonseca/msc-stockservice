@@ -4,13 +4,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>br.com.treinamento.booksws</groupId>
-	<artifactId>msc-booksservice</artifactId>
+	<groupId>br.com.treinamento.stockws</groupId>
+	<artifactId>msc-stockservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Books Microservice</name>
-	<description>Book API, e um microservice relacionado a operacoes com a entidade livro</description>
+	<name>Stock Microservice</name>
+	<description>Stock API, e um microservice relacionado a operacoes com a entidade Stock</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

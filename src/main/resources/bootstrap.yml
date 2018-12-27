@@ -1,7 +1,7 @@
 #Configuações do Microservice
 spring:
   application:
-    name: msc-booksws
+    name: msc-stockws
 
 #Configuracoes Relacionadas a como localizar o ConfigServer usando Eureka
 #Nome da aplicação para recuperar as propriedades do configserver
@@ -18,4 +18,4 @@ spring:
         enabled: true
         service-id: configserver  
       profile: ${spring.profiles.active:default}
-      name: booksws
+      name: stockws
