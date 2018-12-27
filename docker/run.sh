@@ -1,18 +1,21 @@
 #!/bin/sh
 
 echo "********************************************************"
-echo "Waiting for the eureka server to start on port 8761"
+echo "Esperando pelo servidor eureka na porta $EUREKASERVER_PORT"
 echo "********************************************************"
-while ! `nc -z servicediscovery 8761`; do sleep 3; done
-echo "******* Eureka Server has started"
+while ! `nc -z eurekaserver $EUREKASERVER_PORT`; do sleep 3; done
+echo "******* Servidor eureka iniciou"
 
 echo "********************************************************"
-echo "Waiting for the configuration server to start on port 8888"
+echo "Esperando pelo servidor de configuracao na porta $CONFIGSERVER_PORT"
 echo "********************************************************"
-while ! `nc -z configserver 8888`; do sleep 3; done
+while ! `nc -z configserver $CONFIGSERVER_PORT`; do sleep 3; done
 echo "*******  Configuration Server has started"
 
 echo "********************************************************"
-echo "Starting bookWS"
+echo "Iniciando Microservico BookWS                           "
 echo "********************************************************"
-java -jar /usr/local/@project.artifactId@/@project.build.finalName@.jar
+java -Djava.security.egd=file:/dev/./urandom -Dserver.port=$PORT   \
+     -Deureka.client.serviceUrl.defaultZone=$EUREKA_DEFAULT_ZONE   \
+     -Dspring.profiles.active=$PROFILE                             \
+     -jar /usr/local/@project.artifactId@/@project.build.finalName@.jar

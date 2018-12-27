@@ -22,10 +22,10 @@ public class BooksController {
 
 	@Value("${msc1.title}")
 	private String testProperty;
-	
+
 	@Autowired
 	private BooksRepository booksRepository;
-	
+
 	@GetMapping
 	public List<Book> list() {
 		return booksRepository.findAll();
@@ -33,24 +33,26 @@ public class BooksController {
 
 	@GetMapping("/{id}")
 	public Book get(@PathVariable("id") long id) {
-		return booksRepository.getOne( id );
+		return booksRepository.getOne(id);
 	}
-	
+
 	@PostMapping
 	@ResponseStatus(HttpStatus.OK)
 	public void create(@RequestBody Book book) {
-		booksRepository.save( book );
+		booksRepository.save(book);
 	}
-	
+
 	/**
-	 * Criei esse path apenas para testar se as configuracoes estao sendo pegas do config server
+	 * Criei esse path apenas para testar se as configuracoes estao sendo pegas do
+	 * config server
+	 * 
 	 * @return
 	 */
 	@GetMapping("/configs")
-    public String test() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("msc1.title - ").append(testProperty).append(" ");
-        return builder.toString();
-    }
+	public String test() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("msc1.title - ").append(testProperty).append(" ");
+		return builder.toString();
+	}
 
 }

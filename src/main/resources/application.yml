@@ -1,26 +1,21 @@
-#Configuações do Microservice
-spring:
-  application:
-    name: msc-booksws
-      
 #Porta deste Microservice
 server:
-  port: 9002
+  port: ${PORT:9010}
 
 #Configuracoes relacionadas ao registro no eureka
 eureka:
-  client:
-    enabled: true
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://servicediscovery:8761/eureka/
   instance:
     prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_DEFAULT_ZONE:http://localhost:8761/eureka/}
+      healthcheck:
+        enabled: true
 
 #Configuracoes relacionadas ao Actuator
 info:
   app:
     name:@project.name@
     description:@project.description@
-    version:@project.version@  
+    version:@project.version@
