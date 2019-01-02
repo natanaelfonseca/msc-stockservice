@@ -1,7 +1,7 @@
 #Configuações do Microservice
 spring:
   application:
-    name: msc-stockws
+    name: stockws
 
 #Configuracoes Relacionadas a como localizar o ConfigServer usando Eureka
 #Nome da aplicação para recuperar as propriedades do configserver

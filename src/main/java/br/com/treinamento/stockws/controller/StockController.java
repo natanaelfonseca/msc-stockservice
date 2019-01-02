@@ -1,4 +1,4 @@
-package br.com.treinamento.booksws.controller;
+package br.com.treinamento.stockws.controller;
 
 import java.util.List;
 
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.treinamento.booksws.model.Stock;
-import br.com.treinamento.booksws.repository.StockRepository;
+import br.com.treinamento.stockws.model.Stock;
+import br.com.treinamento.stockws.repository.StockRepository;
 
 @RestController
-@RequestMapping("/api/v1/stocks")
+@RequestMapping("/v1/stocks")
 public class StockController {
 
 	@Autowired

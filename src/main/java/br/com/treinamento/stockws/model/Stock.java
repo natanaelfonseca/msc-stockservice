@@ -1,4 +1,4 @@
-package br.com.treinamento.booksws.model;
+package br.com.treinamento.stockws.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

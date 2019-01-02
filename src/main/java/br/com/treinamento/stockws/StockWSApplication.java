@@ -1,4 +1,4 @@
-package br.com.treinamento.booksws;
+package br.com.treinamento.stockws;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
